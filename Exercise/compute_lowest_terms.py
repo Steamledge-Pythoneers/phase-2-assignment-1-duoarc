@@ -16,7 +16,7 @@ def lowest_terms(x):
     range_stop = abs(min([n1,n2]))+1
     
     # Check if both numbers are not equal to 0
-    if n1 == 0 and n2 == 0:
+    if n1 != 0 and n2 != 0:
         # Iterate through the range of the lowest number in reverse 
         for i in reversed(range(range_stop)):
             # Check that for factor of both numbers 
