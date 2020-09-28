@@ -7,29 +7,35 @@ def lowest_terms(x):
     return: the lowest terms seperated by an '/'
 
     """
-    # Split the string into a list of 2 numbers
-    y = x.split("/")
-    # Assign the numbers to a variable each and convert to integers from strings
-    n1 = int(y[0])
-    n2 = int(y[1])
-    # Set the lower number to be used as range number division
-    #range_stop = abs(min([n1,n2]))+1
-    if n1 == 0:
+    print ("*******************************")
+    # Split the string by / and assign to variables
+    num,denom = x.split("/")
+    #COnvert to integers
+    num,denom = int(num),int(denom)
+
+    
+    # Return 0 for any numerator which is 0
+    if num == 0:
         return "0"
-    if n2 == 0:
+    # Return Undefined for any denominator which is 0
+    if denom == 0:
     	return "Undefined"
-    elif n2 > 0:
-        range_stop = n2+1
-        # Iterate through the range of the lowest number in reverse
-        for i in reversed(range(range_stop)):
-            # Check that for factor of both numbers 
-            if n1%i == 0 and n2%i == 0:
-                # Return the result of dividing the numbers by the factor     
-                return "{}/{}".format(n1//i,n2//i)
+    # For denominators greater than 0
+    elif denom > 0:
+        # Iterate through from the denominator +1 to 0
+        for i in reversed(range(denom+1)):
+            # Check for a common factor of both numbers 
+            if num%i == 0 and denom%i == 0:
+                # Divide both number by their common factor
+                term1,term2=num//i,denom//i
+                # Return the terms     
+                return "{}/{}".format(term1,term2)
+    # If the denominator is a negative number 
     else:
-        range_stop = n2
-        for i in range(range_stop, 0):
-            # Check that for factor of both numbers
-            if n1%i == 0 and n2%i == 0:
-                # Return the result of dividing the numbers by the factor
-                return "{}/{}".format(n1//i,n2//i)
+        for i in range(denom, 0):
+            # Check for a common factor of both numbers 
+            if num%i == 0 and denom%i == 0:
+                # Divide both number by their common factor
+                term1,term2=num//i,denom//i
+                # Return the terms     
+                return "{}/{}".format(term1,term2)
