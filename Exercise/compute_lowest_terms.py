@@ -4,10 +4,11 @@ def lowest_terms(x):
     """
     This function will divide two number by their highest common factor
 
-    return: the lowest terms seperated by an '/'
+    input: two integers seperated by a slash as a string type . For Example, '20/10'
+
+    return: The integers reduced to their lowest terms, seperated by an '/'. For the example above, '2/1' for the highest factor of 10. 
 
     """
-    print ("*******************************")
     # Split the string by / and assign to variables
     num,denom = x.split("/")
     #COnvert to integers
