@@ -16,11 +16,11 @@ def lowest_terms(x):
 
     
     # Return 0 for any numerator which is 0
-    if num == 0:
-        return "0"
-    # Return Undefined for any denominator which is 0
     if denom == 0:
-    	return "Undefined"
+        return "Undefined"
+    # Return Undefined for any denominator which is 0
+    if num == 0:
+    	return "0"
     # For denominators greater than 0
     elif denom > 0:
         # Iterate through from the denominator +1 to 0
